@@ -1,0 +1,60 @@
+def main():#2.2
+  x = str(input()).split()
+  x = x[::-1]
+  x = " ".join(x).capitalize()
+  print(str(x))
+if __name__=="__main__":
+  main()
+ 
+def main(): #1.2
+  x = int(input())
+  if -2**7<=x<=2**7-1:
+    if x<0:
+        k= str(abs(x))
+        k = k[::-1]
+        print('-'+int(k))
+    if int(x)>0:
+        x = str(x)
+        x = x[::-1]
+        print(int(x))
+  else:
+    print('no')
+
+if __name__=="__main__":
+  main()
+  
+ x=str(input()) #1.1
+b = x[::-1]
+if b ==x:
+  print('True')
+else:
+  print('False')
+ 
+import itertools #3.2
+def main():
+  x= list(input())
+  y = itertools.permutations(x)
+  q = list()
+  for i in y:
+      w = [*i]
+      q.append(w)
+  print(q)
+if __name__=="__main__":
+  main()
+  
+ from itertools import combinations
+import math  # 3.1
+q = [float(input()) for _ in range(int(input()))]
+c, z, x = int(input('введите число к которому мы стремимся:')),list(combinations(q, 4)),[]
+for i in z:
+    su = math.fsum(i)
+    if su == c:
+        print(i,'\n',su)
+    else:
+        raz = abs(c - su)
+        x.append([raz,su,i])
+m = min(x)[0]
+for l in range(len(x)):
+  p = x[l]
+  if p[0] == m:
+    print(p[1],'\n',p[2])
